@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: UserServer.PL/Dockerfile
+    container_name: userserver_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresdb
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Project=Host=postgresdb;Port=5432;Database=UserServerDb;UserId=postgres;Password=postgres
+    restart: on-failure
+  postgresdb:
+    image: postgres:15-alpine
+    container_name: postgresdb
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: UserServerDb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:

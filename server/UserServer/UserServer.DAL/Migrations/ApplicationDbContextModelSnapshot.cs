@@ -233,30 +233,30 @@ namespace UserServer.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("289037e1-4191-4670-9bef-24277044b72e"),
-                            CreatedAt = new DateTime(2025, 10, 26, 21, 10, 23, 971, DateTimeKind.Utc).AddTicks(2250),
+                            Id = new Guid("ed2a321d-cc44-4d65-854f-57c02cb59405"),
+                            CreatedAt = new DateTime(2025, 10, 27, 3, 44, 44, 904, DateTimeKind.Utc).AddTicks(5346),
                             Email = "admin@gmail.com",
-                            ModifiedAt = new DateTime(2025, 10, 26, 21, 10, 23, 971, DateTimeKind.Utc).AddTicks(2252),
+                            ModifiedAt = new DateTime(2025, 10, 27, 3, 44, 44, 904, DateTimeKind.Utc).AddTicks(5347),
                             Password = "Admin123!",
                             Role = "admin",
                             Username = "admin"
                         },
                         new
                         {
-                            Id = new Guid("7efcf5f7-f80d-42b9-8263-d0bff6797f27"),
-                            CreatedAt = new DateTime(2025, 10, 26, 21, 10, 23, 971, DateTimeKind.Utc).AddTicks(2284),
+                            Id = new Guid("8584729c-aa05-420f-8714-279cd809269d"),
+                            CreatedAt = new DateTime(2025, 10, 27, 3, 44, 44, 904, DateTimeKind.Utc).AddTicks(5381),
                             Email = "user1@gmail.com",
-                            ModifiedAt = new DateTime(2025, 10, 26, 21, 10, 23, 971, DateTimeKind.Utc).AddTicks(2284),
+                            ModifiedAt = new DateTime(2025, 10, 27, 3, 44, 44, 904, DateTimeKind.Utc).AddTicks(5381),
                             Password = "User1@123",
                             Role = "user",
                             Username = "user1"
                         },
                         new
                         {
-                            Id = new Guid("bba6b73b-fca6-46a2-bde4-ebbc807f32b1"),
-                            CreatedAt = new DateTime(2025, 10, 26, 21, 10, 23, 971, DateTimeKind.Utc).AddTicks(2287),
+                            Id = new Guid("c33ecff4-12ec-403d-b4c0-01ecf4627a60"),
+                            CreatedAt = new DateTime(2025, 10, 27, 3, 44, 44, 904, DateTimeKind.Utc).AddTicks(5384),
                             Email = "user2@gmail.com",
-                            ModifiedAt = new DateTime(2025, 10, 26, 21, 10, 23, 971, DateTimeKind.Utc).AddTicks(2287),
+                            ModifiedAt = new DateTime(2025, 10, 27, 3, 44, 44, 904, DateTimeKind.Utc).AddTicks(5384),
                             Password = "User2@123",
                             Role = "user",
                             Username = "user2"

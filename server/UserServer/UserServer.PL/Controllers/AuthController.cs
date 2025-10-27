@@ -35,6 +35,7 @@ namespace UserServer.BLL.Controllers
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public async Task<ActionResult> Login(LoginRequestDto model)
         {
+
             if (User.Identity.IsAuthenticated)
             {
                 return Ok(new APIResponse()

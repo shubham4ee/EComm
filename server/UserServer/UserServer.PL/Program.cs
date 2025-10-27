@@ -145,6 +145,27 @@ builder.Services.AddAuthentication(options =>
 
 
 var app = builder.Build();
+// -----------------------ADD THIS SECTION TO APPLY MIGRATIONS ON STARTUP----------------------
+try
+{
+    // Create a scope to resolve services
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    
+    // Apply pending migrations (creates DB and tables if needed)
+    dbContext.Database.Migrate();
+
+
+    // OPTIONAL: Add initial seed data here if you have any
+    // SeedData.Initialize(scope.ServiceProvider); 
+}
+catch (Exception ex)
+{
+    // Log the error. This is important if the Postgres container isn't ready yet.
+    var logger = app.Services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "An error occurred while migrating the database.");
+    // The application will likely shut down or throw an error here if the connection fails repeatedly.
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
